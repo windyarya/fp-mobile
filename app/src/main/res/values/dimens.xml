@@ -1,0 +1,21 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <item name="_15sdp" type="dimen" format="float">19.50</item>
+    <item name="_5sdp" type="dimen" format="float">6.50</item>
+    <item name="_2sdp" type="dimen" format="float">2.60</item>
+    <item name="_8sdp" type="dimen" format="float">10.40</item>
+    <item name="_10sdp" type="dimen" format="float">13.00</item>
+    <item name="_16sdp" type="dimen" format="float">20.80</item>
+    <item name="_18sdp" type="dimen" format="float">23.40</item>
+    <item name="_20sdp" type="dimen" format="float">26.00</item>
+    <item name="_24sdp" type="dimen" format="float">31.20</item>
+    <item name="_25sdp" type="dimen" format="float">32.50</item>
+    <item name="_28sdp" type="dimen" format="float">36.40</item>
+    <item name="_30sdp" type="dimen" format="float">39.00</item>
+    <item name="_48sdp" type="dimen" format="float">62.40</item>
+    <item name="_50sdp" type="dimen" format="float">65.00</item>
+    <item name="_100sdp" type="dimen" format="float">130.00</item>
+    <item name="_150sdp" type="dimen" format="float">190.00</item>
+    <item name="_200sdp" type="dimen" format="float">260.00</item>
+    <item name="_250sdp" type="dimen" format="float">325.00</item>
+</resources>

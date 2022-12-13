@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30pt"
+        android:id="@+id/title"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="10pt"
+        android:text="Explore the color!"
+        android:textSize="12pt"
+        android:textStyle="bold"
+        android:gravity="center_vertical"/>
+
+<!--    <TextView-->
+<!--        android:id="@+id/descApp"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="100pt"-->
+<!--        android:layout_margin="10pt"-->
+<!--        android:text="Ini buat pengenalan Aplikasi Aja"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="12pt"-->
+<!--        android:textAlignment="center"-->
+<!--        android:gravity="center"-->
+<!--        android:background="@drawable/rounded"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/title"-->
+<!--        app:layout_constraintEnd_toEndOf="parent" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/tesBw"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="30pt"-->
+<!--        android:layout_marginHorizontal="10pt"-->
+<!--        android:background="@drawable/rounded"-->
+<!--        android:text="Tes Buta Warna"-->
+<!--        android:layout_margin="10pt"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/descApp"/>-->
+
+    <Button
+        android:id="@+id/tesCD"
+        android:layout_width="match_parent"
+        android:layout_height="30pt"
+        android:layout_marginHorizontal="10pt"
+        android:background="@drawable/rounded"
+        android:text="Pendeteksi Warna"
+        android:layout_margin="10pt"
+        app:layout_constraintTop_toBottomOf="@+id/title"/>
+
+    <Button
+        android:id="@+id/faskesTerdekat"
+        android:layout_width="match_parent"
+        android:layout_height="30pt"
+        android:layout_marginHorizontal="10pt"
+        android:background="@drawable/rounded"
+        android:text="Fasilitas Kesehatan Terdekat"
+        android:layout_margin="10pt"
+        app:layout_constraintTop_toBottomOf="@+id/tesCD"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
