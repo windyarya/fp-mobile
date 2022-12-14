@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    tools:context=".MapsActivity">
+    tools:context=".maps.MapsActivity">
 
     <LinearLayout
     android:layout_width="wrap_content"
@@ -22,29 +22,29 @@
             android:src="@drawable/ic_baseline_local_hospital_24"
             />
 
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/atm"
-            android:padding="30dp"
-            android:src="@drawable/ic_baseline_local_atm_24"
-            />
+<!--        <ImageButton-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/atm"-->
+<!--            android:padding="30dp"-->
+<!--            android:src="@drawable/ic_baseline_local_atm_24"-->
+<!--            />-->
 
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/restaurant"
-            android:padding="30dp"
-            android:src="@drawable/ic_baseline_restaurant_24"
-            />
+<!--        <ImageButton-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/restaurant"-->
+<!--            android:padding="30dp"-->
+<!--            android:src="@drawable/ic_baseline_restaurant_24"-->
+<!--            />-->
 
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/bank"
-            android:padding="30dp"
-            android:src="@drawable/ic_baseline_comment_bank_24"
-            />
+<!--        <ImageButton-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/bank"-->
+<!--            android:padding="30dp"-->
+<!--            android:src="@drawable/ic_baseline_comment_bank_24"-->
+<!--            />-->
 
     </LinearLayout>
 

@@ -36,7 +36,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private FusedLocationProviderClient fusedLocationProviderClient;
     private static final int Request_code = 101;
     private double lat, lng;
-    ImageButton atm, bank, hospital, restaurant;
+    ImageButton hospital;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,10 +45,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         binding = ActivityMapsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        atm=findViewById(R.id.atm);
-        bank=findViewById(R.id.bank);
         hospital=findViewById(R.id.hospital);
-        restaurant=findViewById(R.id.restaurant);
 
         fusedLocationProviderClient=
                 LocationServices.getFusedLocationProviderClient(this.getApplicationContext());
@@ -57,27 +54,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-
-        atm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                StringBuilder stringBuilder= new StringBuilder
-                        ("https://maps.googleapis.com/maps/api/place/nearbysearch/json?");
-                stringBuilder.append("location=" + lat + "," + lng);
-                stringBuilder.append("&radius=3000");
-                stringBuilder.append("&type=atm");
-                stringBuilder.append("&sensor=true");
-                stringBuilder.append("&key=" +getResources().getString(R.string.google_maps_key));
-
-                String url= stringBuilder.toString();
-                Object dataFetch[]= new Object[2];
-                dataFetch[0]=mMap;
-                dataFetch[1]=url;
-
-                FetchData fetchData=new FetchData();
-                fetchData.execute(dataFetch);
-            }
-        });
 
         hospital.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,50 +73,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                 FetchData fetchData=new FetchData();
                 fetchData.execute(dataFetch);
+
+                addMarkerRS();
             }
         });
 
-        bank.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                StringBuilder stringBuilder= new StringBuilder
-                        ("https://maps.googleapis.com/maps/api/place/nearbysearch/json?");
-                stringBuilder.append("location=" + lat + "," + lng);
-                stringBuilder.append("&radius=3000");
-                stringBuilder.append("&type=bank");
-                stringBuilder.append("&sensor=true");
-                stringBuilder.append("&key=" +getResources().getString(R.string.google_maps_key));
-
-                String url= stringBuilder.toString();
-                Object dataFetch[]= new Object[2];
-                dataFetch[0]=mMap;
-                dataFetch[1]=url;
-
-                FetchData fetchData=new FetchData();
-                fetchData.execute(dataFetch);
-            }
-        });
-
-        restaurant.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                StringBuilder stringBuilder= new StringBuilder
-                        ("https://maps.googleapis.com/maps/api/place/nearbysearch/json?");
-                stringBuilder.append("location=" + lat + "," + lng);
-                stringBuilder.append("&radius=3000");
-                stringBuilder.append("&type=restaurant");
-                stringBuilder.append("&sensor=true");
-                stringBuilder.append("&key=" +getResources().getString(R.string.google_maps_key));
-
-                String url= stringBuilder.toString();
-                Object dataFetch[]= new Object[2];
-                dataFetch[0]=mMap;
-                dataFetch[1]=url;
-
-                FetchData fetchData=new FetchData();
-                fetchData.execute(dataFetch);
-            }
-        });
     }
 
     /**
@@ -158,6 +95,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         // Add a marker in Sydney and move the camera
         getCurrentLocation();
+//        LatLng medcen = new LatLng(-7.2904334, 112.79282309999999);
+//        mMap.addMarker(new MarkerOptions().position(medcen).title("ITS Medical Center"));
+//        mMap.moveCamera(CameraUpdateFactory.newLatLng(medcen));
+//
+//        LatLng nala = new LatLng(-7.291169900000001, 112.79526059999999);
+//        mMap.addMarker(new MarkerOptions().position(nala).title("RSGM Nala Husada"));
+//        mMap.moveCamera(CameraUpdateFactory.newLatLng(nala));
+    }
+
+    private void addMarkerRS() {
         LatLng medcen = new LatLng(-7.2904334, 112.79282309999999);
         mMap.addMarker(new MarkerOptions().position(medcen).title("ITS Medical Center"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(medcen));
@@ -165,6 +112,22 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LatLng nala = new LatLng(-7.291169900000001, 112.79526059999999);
         mMap.addMarker(new MarkerOptions().position(nala).title("RSGM Nala Husada"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(nala));
+
+        LatLng unair = new LatLng(-7.2698779, 112.7848318);
+        mMap.addMarker(new MarkerOptions().position(unair).title("RS Universitas Airlangga (Unair)"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(unair));
+
+        LatLng haji = new LatLng(-7.2833905, 112.7795594);
+        mMap.addMarker(new MarkerOptions().position(haji).title("RS Haji Surabaya"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(haji));
+
+        LatLng manyar = new LatLng(-7.289895, 112.7633821);
+        mMap.addMarker(new MarkerOptions().position(manyar).title("RS Manyar"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(manyar));
+
+        LatLng drsutomo = new LatLng(-7.2682228, 112.7580061);
+        mMap.addMarker(new MarkerOptions().position(drsutomo).title("RS Dr. SUtomo"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(drsutomo));
     }
 
     private void getCurrentLocation()
@@ -188,8 +151,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
             @Override
             public void onLocationResult(@NonNull LocationResult locationResult) {
-                Toast.makeText(getApplicationContext(),"Location result is="+ locationResult
-                ,Toast.LENGTH_LONG).show();
 
                 if(locationResult== null){
                     Toast.makeText(getApplicationContext(),"Current Location is null"

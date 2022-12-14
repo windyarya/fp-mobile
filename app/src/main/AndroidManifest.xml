@@ -42,7 +42,7 @@
             android:exported="true"
             android:label="@string/title_activity_maps">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name=".maps.MapsActivity" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
@@ -51,7 +51,7 @@
             android:name=".colordetection.activities.MainActivity"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name=".colordetection.activities.MainActivity" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
